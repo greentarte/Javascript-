@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var vscope = 'global'; 
+		function fscope(){
+		    alert(vscope); // global
+		}
+		fscope();
+//--------------------------------------------
+		var vscope = 'global';
+		function fscope(){
+		    var vscope = 'local';
+		    alert('함수안 '+vscope); //local
+		}
+		fscope();
+		alert('함수밖 '+vscope); //global
+
+//--------------------------------------------
+
+		var vscope = 'global';
+		function fscope(){
+		    vscope = 'local'; 
+		    alert('함수안'+vscope); //local
+		}
+		fscope();
+		alert('함수밖'+vscope); // local
+
+//--------------------------------------------
+
+	MYAPP = {};
+	MYAPP.calculator = {
+	    'left' : null,
+	    'right' : null
+	}
+	MYAPP.coordinate = {
+	    'left' : null,
+	    'right' : null
+	}
+	 
+	MYAPP.calculator.left = 10;
+	MYAPP.calculator.right = 20;
+	function sum(){
+	    return MYAPP.calculator.left + MYAPP.calculator.right;
+	}
+	document.write(sum());
+//--------------------------------------------
+	for(var i = 0; i < 1; i++){
+	    var name = 'coding everybody'; //전역변수로 인식
+	}
+	alert(name); // coding everybody
+
+	//자바스크립트의 지역변수는 함수에서만 유효하다.
+
+//--------------------------------------------
+// 정적 유효범위 
+	var i = 5;
+	 
+	function a(){
+	    var i = 10;
+	    b();
+	}
+	 
+	function b(){
+	    document.write(i);
+	}
+	 
+	a(); // 5 함수가 정의될때 기준으로 변수가 사용됨 
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var str='a';
+	var pattern=/a/;
+	// var pattern = new RegExp('a');  9번쨰줄과 같은 뜻 
+
+	console.log(pattern.exec('abcdef')); //["a"]; 
+	//실행결과는 문자열 a를 값으로 하는 배열을 리턴한다. 
+	console.log(pattern.exec('bcdef')); // null
+	console.log(pattern.test('abcdef')); //true; 
+	console.log(pattern.test('bcdef')); //false; 
+	//exec 추출 test 존재유무 
+	var pattern=/a./;
+	console.log(pattern.exec('abcdef')); //["ab"]; 
+	//--------------------------------------------------
+
+	var pattern = /a/;
+	var str = 'abcdef';
+	str.match(pattern); // ["a"]
+	var str2='bcdef';
+	str2.match(pattern); // null
+	str.replace(pattern,'A'); // 'Abcdef'
+
+	//--------------------------------------------------
+	//정규표현식 옵션
+	var xi = /a/;
+	"Abcde".match(xi); // null
+	var oi = /a/i; //i는 대소문자 구분없이 탐색
+	"Abcde".match(oi); // ["A"] 
+	var xg = /a/;
+	"abcdea".match(xg); //["a"]
+	var og = /a/g;
+	"abcdea".match(og); //문자열에 포함된 패턴을 전부다 배열로 리턴 ["a","a"]
+	var ig = /a/ig; //a를 대소문자 구분없이 모두 리턴
+	"AabcdAa".match(ig); //["A","a","A","a"]
+
+	//--------------------------------------------------
+	// https://regexper.com/ 정규표현식 시각화 
+	// https://regexr.com/	 정규표현식 빌더 
+	var pattern = /(\w+)\s(\w+)/;
+	var str = "coding everybody";
+	var result = str.replace(pattern, "$2, $1");
+	console.log(result);
+
+	var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+	var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
+	var result = content.replace(urlPattern, function(url){
+	    return '<a href="'+url+'">'+url+'</a>';
+	});
+	console.log(result);
+	
+
+
+</script>
+</body>
+</html>

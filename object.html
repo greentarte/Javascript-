@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//객체 생성 방법1
+		// key, value를 가지는 객체 egoing = key, 10 = value
+		var grades={ 'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+
+		//객체 생성 방법2
+		var grades2 = {};
+		grades2['egoing']=10;
+		grades2['k8805']=6;
+		grades2['sorialgi']=80;
+
+		//객체 생성 방법3
+		var grades3 = new Object();
+		grades3['egoing']=10;
+		grades3['k8805']=6;
+		grades3['sorialgi']=80;		
+
+		//객체 내부 값 사용 
+		grades['egoing'] // 10
+		grades['ego'+'ing'] //10
+		grades.egoing; // 10
+
+		//객체와 반복문 사용 
+		var arr = ['first': 1, 'second': 2, 'third':3];
+		for(key in arr){
+			alert("key: "+key+" value: "+arr[key]+"<br/>");
+			document.write("<li>key: "+key+" value: "+arr[key]+"</li>");
+		}
+		//key: first value: 1
+		//key: second value: 2
+		//key: third value: 3
+
+
+		//객체지향 프로그래밍 연관있는 데이터 및 함수를 같이 묶어서 정의함 
+		var obj = {
+			'list' : {'egoing':10,'k8805':8,'sorialgi':80}
+			'show' : function(){
+				for(var name in this.list){
+					console.log(name,this.list[name]); //여러개의 동시에 출력 
+				}
+				console.log(this.list);
+			}
+		};
+		alert(obj['list']['egoing']); // 10
+		obj.show(); //obj객체 안의 show함수 실행 
+
+
+
+	</script>
+
+</body>
+</html>
