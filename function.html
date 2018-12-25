@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function numbering(){
+			var i = 0;
+			while(i<10){
+				document.write(i);	
+				i=i+1;
+			}
+			
+		}
+		numbering(); 
+
+		function get_member1(){
+			return 'egoing';
+		}
+
+		alert(get_member1()); //alert('egoing');
+
+		function get_argument(arg){
+			return arg;
+		}
+		get_argument(1); // 1
+		get_argument(2); // 2
+		//함수를 정의하는 다른 방법
+		numbering2 = function(){
+			var i = 0;
+			while(i<20){
+				document.write(i);
+				i += 1;
+			}
+		}
+
+		//익명 함수
+		(function(){
+			var i=0;
+			while(i<20){
+				document.write(i);
+				i += 1;
+			}
+		})();
+	</script>
+
+</body>
+</html>

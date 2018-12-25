@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//배열 생성
+	var members= ['egoing','k8805','sorialgi'];
+	alert(members[0]); //egoing
+	alert(members[1]); // k8805
+	alert(members[2]); // sorialgi
+
+	document.write(members[0].toUpperCase()+"<br/>"); // EGOING
+
+	for(var i=0; i<members.length; i++){
+		document.write(members[i].toUpperCase()+"<br/>"); 		
+	}
+
+	//원소 추가 
+	var li = ['a','b','c','d','e'];
+	li.push('f'); // 맨뒤에 1개 추가 a,b,c,d,e,f
+	li=li.concat(['f','g']); //기존에 2개의 원소를 추가  a,b,c,d,e,f,f,g
+	li.unshift('z'); // 맨앞에 1개 추가 z,a,d,b,c,d,e,f,f,g
+
+	//원소 제거
+	li = ['a','b','c','d','e'];
+	li.shiht(); // b,c,d,e
+	li.pop(); // b,c,d
+
+	// 원소 정렬
+	li = ['e','c','d','a','b'];
+	li.sort(); //알파벳 순서로 정렬
+	li.reverse(); //알파벳 역순으로 정렬 
+	//원하는 sort 구현 시 자바스크립트 사전을 참고 
+	/*
+	splice Syntax
+	var a = ['a','b','c'];
+	a.splice(index,howmany,element) //생활코딩 자바스크립트 사전에 문법 참고 
+	a.splice(1,0,'d'); // a,d,b,c
+
+	var a = ['a','b','c'];
+	a.splice(1,1,'x','y'); // a,x,y,c
+	*/
+
+
+
+</script>
+</body>
+</html>
