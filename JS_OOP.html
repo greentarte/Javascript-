@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// 연관된 변수와 메소드를 하나의 객체(object)로 묶는 것 -> OOP
+	function Person(name){
+		this.name=name;
+		this.introduce=function(){
+			return 'My name is '+ this.name;
+		}
+	}	
+	var p1 = new Person('egoing');
+	document.write(p1.introduce());
+</script>
+
+
+</body>
+</html>øø
