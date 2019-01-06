@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!-- inline 방법 -->
+	<input type="button" onclick="alert('Hello world')" value="Hello world" />
+	
+	<!-- script 방법 -->
+	<input type="button" id="hw2" value="Hello world" />
+    <script type="text/javascript">
+        var hw = document.getElementById('hw2');
+        hw.addEventListener('click', function(){
+            alert('Hello world');
+        })
+    </script>
+
+    <!-- 외부파일로 분리 
+    	 유지보수 편의성이 좋음 
+    	 계속 사용파일은 한번만 다운받아서 서버의 부담을 줄여줌-->
+    <input type="button" id="hw" value="Hello world" />
+    <script type="text/javascript" src="script2.js"></script>
+    <!-- script 태그가 포함하는 HTML보다 이후에 위치 해야함 아닐 경우 window.onload를 써야함
+         script 태그가 body태그 끝나는 지점에 있으면 페이지 로딩속도가 상대적으로 빠름  -->
+
+</body>
+</html>
